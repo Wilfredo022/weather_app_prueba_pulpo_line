@@ -135,7 +135,7 @@ const DetailsPage = () => {
       </div>
 
       <div className="data-additional-details">
-        <div>
+        <div className="data-box-container-details">
           <p className="data-title">{t("details.temperature")}</p>
           <div className="box-data-temperature-details">
             <p className="data-text">
@@ -147,12 +147,12 @@ const DetailsPage = () => {
           </div>
         </div>
 
-        <div>
+        <div className="data-box-container-details">
           <p className="data-title">{t("details.humidity")}</p>
           <p className="data-text">{weatherData.current.humidity}%</p>
         </div>
 
-        <div>
+        <div className="data-box-container-details">
           <p className="data-title">{t("details.wind")}</p>
           <p className="data-text">
             {weatherData.current.wind_kph} {t("details.units.kph")}

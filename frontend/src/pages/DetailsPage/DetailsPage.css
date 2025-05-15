@@ -72,6 +72,11 @@
   border-radius: 5px;
   justify-content: space-around;
   background-color: var(--gray);
+  flex-wrap: wrap;
+
+  .data-box-container-details {
+    min-width: 250px;
+  }
 
   .data-title {
     color: var(--primary);
