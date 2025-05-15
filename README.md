@@ -235,7 +235,3 @@ El backend expone los siguientes endpoints:
   - `city` (requerido): Nombre de la ciudad a eliminar de los favoritos.
 - **Ejemplo de uso:**
   - `DELETE /favorites/Londres`
-
-```
-
-```
