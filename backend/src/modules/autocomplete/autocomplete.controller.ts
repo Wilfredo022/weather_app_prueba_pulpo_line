@@ -9,7 +9,6 @@ export class AutocompleteController {
 
   @Get()
   autocomplete(@Query('query') query: string) {
-    console.log(query);
     return this.autocompleteService.getAutocomplete(query);
   }
 }

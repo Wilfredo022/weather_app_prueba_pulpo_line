@@ -1,4 +1,3 @@
-// src/stores/useWeatherStore.ts
 import { create } from "zustand";
 import type { WeatherData } from "../interface/WeatherData";
 

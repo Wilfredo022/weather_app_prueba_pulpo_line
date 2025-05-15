@@ -33,12 +33,11 @@ export class WeatherService {
           dto.city,
         )}&lang=${dto.lang ? dto.lang : 'es'}&aqi=no`,
         {
-          signal: AbortSignal.timeout(5000), // Timeout de 5 segundos
+          signal: AbortSignal.timeout(5000),
         },
       );
 
       if (!request.ok) {
-        // Manejo de errores HTTP
         const errorData = await request.json().catch(() => ({}));
 
         if (request.status === 404 || errorData.error?.code === 1006) {
@@ -72,7 +71,6 @@ export class WeatherService {
 
       const response = await request.json();
 
-      // Validación de la estructura de la respuesta
       if (!response?.location || !response?.current) {
         console.error('Respuesta inválida:', {
           response,
@@ -85,7 +83,6 @@ export class WeatherService {
         );
       }
 
-      // Mapeo seguro de datos con valores por defecto
       return {
         location: {
           name: response.location?.name || 'Desconocido',
@@ -114,7 +111,7 @@ export class WeatherService {
         error instanceof NotFoundException ||
         error instanceof BadRequestException
       ) {
-        throw error; // Reenviar errores ya manejados
+        throw error;
       }
 
       if (error.name === 'AbortError' || error.name === 'TimeoutError') {
@@ -142,7 +139,6 @@ export class WeatherService {
     const apiKey = this.configService.get('API_WEATHER_API');
     const baseUrl = this.configService.get('API_WEATHER_BASE_URL');
 
-    // Validaciones iniciales
     if (!apiKey || !baseUrl) {
       throw new InternalServerErrorException(
         'Configuración del servicio de clima no disponible',
@@ -155,7 +151,6 @@ export class WeatherService {
       );
     }
 
-    // Validar formato de coordenadas
     if (isNaN(Number(lat)) || isNaN(Number(lon))) {
       throw new BadRequestException(
         'Las coordenadas deben ser valores numéricos',
@@ -183,8 +178,6 @@ export class WeatherService {
           lang || 'es'
         }&aqi=no`,
       );
-
-      console.log(request);
 
       if (!request.ok) {
         const errorData = await request.json().catch(() => ({}));
@@ -216,23 +209,19 @@ export class WeatherService {
 
       const response = await request.json();
 
-      // Validación de la estructura de la respuesta
       if (!response?.location || !response?.current) {
         throw new BadGatewayException(
           'Respuesta inválida del servicio de clima',
         );
       }
 
-      console.log(response);
-
-      // Mapeo seguro de datos con valores por defecto
       return {
         location: {
           name: response.location?.name || 'Ubicación desconocida',
           country: response.location?.country || 'Desconocido',
           localtime: response.location?.localtime || null,
-          lat: response.location?.lat ?? numLat, // Usar la original si no viene
-          lon: response.location?.lon ?? numLon, // Usar la original si no viene
+          lat: response.location?.lat ?? numLat,
+          lon: response.location?.lon ?? numLon,
           localtime_epoch: response.location?.localtime_epoch ?? 0,
         },
         current: {

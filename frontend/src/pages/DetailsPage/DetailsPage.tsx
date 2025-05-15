@@ -52,7 +52,6 @@ const DetailsPage = () => {
 
     try {
       if (isFavorite) {
-        // Eliminar
         const favorite = favorites.find(
           (f) => f.city === weatherData.location.name
         );

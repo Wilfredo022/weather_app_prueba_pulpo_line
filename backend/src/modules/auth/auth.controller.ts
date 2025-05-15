@@ -1,4 +1,3 @@
-// src/auth/controllers/auth.controller.ts
 import {
   Body,
   Controller,

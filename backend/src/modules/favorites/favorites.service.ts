@@ -1,4 +1,3 @@
-// src/favorites/favorites.service.ts
 import { Injectable, NotFoundException } from '@nestjs/common';
 
 import { CreateFavoriteDto } from './dto/create-favorite.dto';

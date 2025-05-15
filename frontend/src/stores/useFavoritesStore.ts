@@ -2,8 +2,6 @@ import { create } from "zustand";
 import type { Favorite } from "../interface/favorites";
 import apiClient from "../services/apiClient";
 
-// stores/useFavoritesStore.ts
-
 interface FavoritesStore {
   favorites: Favorite[];
   loaded: boolean;

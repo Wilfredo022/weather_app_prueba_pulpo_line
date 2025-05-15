@@ -27,7 +27,7 @@ const FavoritesPage = () => {
       city: data.city,
       lat: data.lat!,
       lon: data.lon!,
-      lang: i18n.language, // Usar el idioma actual
+      lang: i18n.language,
     });
 
     setWeatherData(response.data);

@@ -1,11 +1,9 @@
-// src/auth/services/auth.service.ts
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { LoginDto } from './dto/login.dto';
 
 @Injectable()
 export class AuthService {
-  // Credenciales mock (en producción usaría una base de datos)
   private readonly mockUser = {
     email: 'test@test.com',
     password: '123456',
@@ -17,7 +15,6 @@ export class AuthService {
   async validateUser(loginDto: LoginDto): Promise<any> {
     const { email, password } = loginDto;
 
-    // Validación de credenciales mock
     if (email === this.mockUser.email && password === this.mockUser.password) {
       const { password, ...result } = this.mockUser;
       return result;

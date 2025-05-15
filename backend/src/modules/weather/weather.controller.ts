@@ -18,7 +18,6 @@ export class WeatherController {
   @Get()
   @UsePipes(new ValidationPipe({ transform: true }))
   search(@Query() searchDto: SearchWeatherDto) {
-    console.log(searchDto);
     if (searchDto.lat !== undefined && searchDto.lon !== undefined) {
       return this.weatherService.searchByCoordinates(
         searchDto.lat,

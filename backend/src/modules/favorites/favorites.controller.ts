@@ -1,4 +1,3 @@
-// src/favorites/favorites.controller.ts
 import {
   Controller,
   Get,

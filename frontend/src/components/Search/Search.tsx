@@ -112,13 +112,13 @@ export const Search = () => {
           city: query,
           lat: searchParams.lat!,
           lon: searchParams.lon!,
-          lang: i18n.language, // Usar el idioma actual
+          lang: i18n.language,
         });
       } else {
         response = await apiClient.get(`/weather`, {
           params: {
             city: searchParams.city,
-            lang: i18n.language, // Usar el idioma actual
+            lang: i18n.language,
           },
         });
       }
