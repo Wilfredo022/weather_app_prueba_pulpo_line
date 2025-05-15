@@ -159,7 +159,7 @@ El backend, ubicado en la carpeta `./backend`, es una aplicación construida con
 
 - **Estructura de Carpetas (ejemplo):**
 
-````
+```
    backend/
    ├── src/
    │   ├── config/        # Archivos de configuración de la aplicación
@@ -177,18 +177,17 @@ El backend, ubicado en la carpeta `./backend`, es una aplicación construida con
    ├── package.json
    ├── nest-cli.json    # Configuración de Nest CLI
    └── tsconfig.json
-   ```
-
+```
 
 - **Decisiones de Diseño:**
 
- - **Arquitectura Modular (NestJS):** NestJS utiliza una arquitectura modular que ayuda a organizar el código de manera lógica y escalable. Los controladores manejan las peticiones HTTP, los servicios contienen la lógica de negocio, y los módulos agrupan funcionalidades relacionadas.
- - **ORM (Prisma):** Prisma se utiliza para interactuar con la base de datos PostgreSQL, proporcionando una forma segura y tipada de realizar consultas y mutaciones.
- - **Autenticación (Passport y Passport-JWT):** Passport y la estrategia Passport-JWT se utilizan para implementar la autenticación de usuarios, protegiendo las rutas que requieren acceso (como la gestión de favoritos). Esto probablemente se implementa a través de Guards y Strategies en NestJS.
- - **Pruebas (Jest):** Se implementan pruebas unitarias e de integración con Jest para asegurar la robustez y el correcto funcionamiento de la lógica del backend.
+- **Arquitectura Modular (NestJS):** NestJS utiliza una arquitectura modular que ayuda a organizar el código de manera lógica y escalable. Los controladores manejan las peticiones HTTP, los servicios contienen la lógica de negocio, y los módulos agrupan funcionalidades relacionadas.
+- **ORM (Prisma):** Prisma se utiliza para interactuar con la base de datos PostgreSQL, proporcionando una forma segura y tipada de realizar consultas y mutaciones.
+- **Autenticación (Passport y Passport-JWT):** Passport y la estrategia Passport-JWT se utilizan para implementar la autenticación de usuarios, protegiendo las rutas que requieren acceso (como la gestión de favoritos). Esto probablemente se implementa a través de Guards y Strategies en NestJS.
+- **Pruebas (Jest):** Se implementan pruebas unitarias e de integración con Jest para asegurar la robustez y el correcto funcionamiento de la lógica del backend.
 
 - **Manejo de Errores:**
- - NestJS proporciona mecanismos para manejar excepciones y enviar respuestas HTTP con códigos de estado apropiados. Se implementan filtros de excepción para personalizar la respuesta en caso de errores de la base de datos, errores de validación de las peticiones y errores al obtener datos de fuentes externas.
+- NestJS proporciona mecanismos para manejar excepciones y enviar respuestas HTTP con códigos de estado apropiados. Se implementan filtros de excepción para personalizar la respuesta en caso de errores de la base de datos, errores de validación de las peticiones y errores al obtener datos de fuentes externas.
 
 ## Descripción de Endpoints del Backend
 
@@ -196,41 +195,47 @@ El backend expone los siguientes endpoints:
 
 - **`GET /weather`**: Devuelve datos del clima para una ciudad o coordenadas específicas.
 
- - **Query Parameters:**
-   - `city` (requerido): Nombre de la ciudad para buscar el clima.
-   - `lang` (opcional): Código del idioma para la internacionalización de los datos del clima (ej: `es`, `en`).
-   - `lat` (opcional): Latitud de la ubicación para buscar el clima.
-   - `lon` (opcional): Longitud de la ubicación para buscar el clima.
- - **Ejemplo de uso:**
-   - `GET /weather?city=Valencia&lang=es`
-   - `GET /weather?city=Valencia&lat=40.7128&lon=-74.0060`
+- **Query Parameters:**
+  - `city` (requerido): Nombre de la ciudad para buscar el clima.
+  - `lang` (opcional): Código del idioma para la internacionalización de los datos del clima (ej: `es`, `en`).
+  - `lat` (opcional): Latitud de la ubicación para buscar el clima.
+  - `lon` (opcional): Longitud de la ubicación para buscar el clima.
+- **Ejemplo de uso:**
+
+  - `GET /weather?city=Valencia&lang=es`
+  - `GET /weather?city=Valencia&lat=40.7128&lon=-74.0060`
 
 - **`GET /autocomplete`**: Devuelve sugerencias de ciudades basadas en una consulta.
 
- - **Query Parameters:**
-   - `query` (requerido): Término de búsqueda para las sugerencias de ciudades.
- - **Ejemplo de uso:**
-   - `GET /autocomplete?query=Val`
+- **Query Parameters:**
+  - `query` (requerido): Término de búsqueda para las sugerencias de ciudades.
+- **Ejemplo de uso:**
+
+  - `GET /autocomplete?query=Val`
 
 - **`GET /favorites`**: Obtiene la lista de ciudades favoritas del usuario autenticado.
 
- - **Autenticación:** Requiere autenticación mediante JWT.
- - **Respuesta:** Devuelve un array de nombres de ciudades favoritas.
+- **Autenticación:** Requiere autenticación mediante JWT.
+- **Respuesta:** Devuelve un array de nombres de ciudades favoritas.
 
 - **`POST /favorites`**: Agrega una ciudad a la lista de favoritos del usuario autenticado.
 
- - **Autenticación:** Requiere autenticación mediante JWT.
- - **Cuerpo de la petición (ejemplo en JSON):**
-   ```json
-   {
-     "city": "Nueva York"
-   }
-   ```
+- **Autenticación:** Requiere autenticación mediante JWT.
+- **Cuerpo de la petición (ejemplo en JSON):**
+
+  ```json
+  {
+    "city": "Nueva York"
+  }
+  ```
 
 - **`DELETE /favorites/:city`**: Elimina una ciudad específica de la lista de favoritos del usuario autenticado.
- - **Autenticación:** Requiere autenticación mediante JWT.
- - **Parámetro de la ruta:**
-   - `city` (requerido): Nombre de la ciudad a eliminar de los favoritos.
- - **Ejemplo de uso:**
-   - `DELETE /favorites/Londres`
-````
+- **Autenticación:** Requiere autenticación mediante JWT.
+- **Parámetro de la ruta:**
+  - `city` (requerido): Nombre de la ciudad a eliminar de los favoritos.
+- **Ejemplo de uso:**
+  - `DELETE /favorites/Londres`
+
+```
+
+```
