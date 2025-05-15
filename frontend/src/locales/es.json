@@ -1,0 +1,56 @@
+{
+  "weatherApp": "Aplicación del Clima",
+  "logout": "Cerrar sesión",
+  "search": {
+    "placeholder": "Buscar por ciudad",
+    "noResults": "No se encontraron ciudades con el nombre \"{{query}}\"",
+    "emptyField": "El campo de búsqueda no puede estar vacío",
+    "suggestionsError": "Error al cargar sugerencias",
+    "weatherError": "Error al buscar el clima",
+    "loading": "Buscando...",
+    "invalidCoordinates": "Error coordenadas invalidas"
+  },
+  "favorites": {
+    "title": "Favoritos",
+    "noFavorites": "No hay favoritos",
+    "deleteNotification": "Se ha eliminado de favoritos \"{{city}}\"",
+    "viewDetails": "Ver detalles",
+    "delete": "Eliminar"
+  },
+  "history": {
+    "title": "Historial de búsquedas",
+    "noHistory": "No hay búsquedas recientes",
+    "lastSearch": "Última búsqueda: {{date}}"
+  },
+  "details": {
+    "noData": "No hay datos disponibles",
+    "back": "Volver",
+    "addFavorite": "Se ha agregado a favoritos \"{{city}}\"",
+    "removeFavorite": "Se ha eliminado de favoritos \"{{city}}\"",
+    "temperature": "Temperatura",
+    "humidity": "Humedad",
+    "wind": "Viento",
+    "units": {
+      "celsius": "°C",
+      "fahrenheit": "°F",
+      "kph": "KPH"
+    },
+    "error": "Error al actualizar favorito"
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "email": "Email",
+    "emailPlaceholder": "joe@gmail.com",
+    "password": "Contraseña",
+    "passwordPlaceholder": "******",
+    "submit": "Ingresar",
+    "errors": {
+      "invalidEmail": "Email inválido",
+      "emailRequired": "Email es requerido",
+      "passwordLength": "La contraseña debe tener al menos 6 caracteres",
+      "invalidCredentials": "Credenciales incorrectas o error del servidor"
+    },
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña"
+  }
+}

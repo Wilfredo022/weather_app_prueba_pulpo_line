@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  font-family: "Poppins", sans-serif;
+  color-scheme: light dark;
+  color: black;
+  --gray: #f5f1f1;
+  --gray-dark: #c2bfbf;
+  --primary: #4a90e2;
+  --secondary: #1a76e0;
+  --red: #ec3c1c;
+  background-color: #ffffff;
+}
+
+* {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 10 PX = 1 rem */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.8rem;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  display: flex;
+  justify-content: center;
+  background-color: #cecece;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100dvh;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: var(--gray);
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #4a90e2;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 6px; /* Hace la barra más delgada */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent; /* Fondo transparente */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--gray-dark); /* Color gris de la barra */
+  border-radius: 3px; /* Bordes redondeados */
+}
+
+.not-data {
+  display: flex;
+  min-height: 70dvh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h3 {
+    font-size: 2.5em;
+    color: var(--gray-dark);
+  }
+
+  .icon-not-data {
+    width: 200px;
+    color: var(--gray-dark);
+    height: 200px;
+  }
+}

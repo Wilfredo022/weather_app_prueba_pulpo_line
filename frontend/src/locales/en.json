@@ -1,0 +1,56 @@
+{
+  "weatherApp": "Weather App",
+  "logout": "Logout",
+  "search": {
+    "placeholder": "Search by city",
+    "noResults": "No cities found with the name \"{{query}}\"",
+    "emptyField": "Search field cannot be empty",
+    "suggestionsError": "Error loading suggestions",
+    "weatherError": "Error fetching weather data",
+    "loading": "Searching...",
+    "invalidCoordinates": "Error invalid coordinates"
+  },
+  "favorites": {
+    "title": "Favorites",
+    "noFavorites": "No favorites yet",
+    "deleteNotification": "Removed from favorites \"{{city}}\"",
+    "viewDetails": "View details",
+    "delete": "Delete"
+  },
+  "history": {
+    "title": "Search History",
+    "noHistory": "No recent searches",
+    "lastSearch": "Last search: {{date}}"
+  },
+  "details": {
+    "noData": "No data available",
+    "back": "Back",
+    "addFavorite": "Added to favorites \"{{city}}\"",
+    "removeFavorite": "Removed from favorites \"{{city}}\"",
+    "temperature": "Temperature",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "units": {
+      "celsius": "°C",
+      "fahrenheit": "°F",
+      "kph": "KPH"
+    },
+    "error": "Error updating favorite"
+  },
+  "login": {
+    "title": "Sign in",
+    "email": "Email",
+    "emailPlaceholder": "joe@gmail.com",
+    "password": "Password",
+    "passwordPlaceholder": "******",
+    "submit": "Login",
+    "errors": {
+      "invalidEmail": "Invalid email",
+      "emailRequired": "Email is required",
+      "passwordLength": "Password must be at least 6 characters",
+      "invalidCredentials": "Invalid credentials or server error"
+    },
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
+  }
+}
